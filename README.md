@@ -1,2 +1,3 @@
-# slimeotron
-an artificial neuron based on the slimezistor and the trash robot geometron printer
+# Slimeotron
+
+### An artificial neuron based on the [slimezistor](https://github.com/lafelabs/slimezistor) and the [trash robot](https://www.trashrobot.org) geometron printer.
