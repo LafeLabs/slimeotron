@@ -2,6 +2,8 @@
 
 ### An artificial neuron based on the [slimezistor](https://github.com/lafelabs/slimezistor) and the [trash robot](https://www.trashrobot.org) geometron printer.
 
+This project uses one [Arduino Uno](https://en.wikipedia.org/wiki/Arduino_Uno), two [Adafruit Circuit Playground Express](https://learn.adafruit.com/adafruit-circuit-playground-express) boards, a [custom pcb from pcbway](https://www.pcbway.com/project/shareproject/Trash_Robot_main__brain__board.html), 3 [stepper motor boards from pololu robotics](https://www.pololu.com/product/2966), 3 cardboard cubes, and various electronics and art supplies. 
+
 ### [link to slimeotron on tiktok](https://www.tiktok.com/@trash_robot/video/7202413835377216814)
 
 ### [slimeotron part 2 on tiktok](https://www.tiktok.com/@trash_robot/video/7202754417244818731)
@@ -73,6 +75,7 @@ void loop() {
 
 ### Geometron Hypercube Trajectory:
 
+The robot probe moves in a cube as shown.  An external signal on the A0 pin of the robot control board changes the unit of the cube.  This signal comes from the optical neuron Adafruit circuit playground express board.
 
 ![](https://raw.githubusercontent.com/LafeLabs/slimeotron/main/trashmagic/cube-spelling.svg)
 
@@ -402,5 +405,179 @@ void geometronSequence(String glyph){
    }
 }
 ```
+
+# TrashScope
+
+## [GEOMETRON/](geometron/)
+
+This is a system for creating self-replicating media using microscopes built from trash, smart phones, and free open source art and science tools.
+
+To build a microscope, we first need to get a kit for all the electronics parts. 
+
+### Electronics Kit Parts
+
+ - [3 motor controller boards from Pololu(10x3=$30)](https://www.pololu.com/product/2966)
+ - [Custom printed circuit board to connect Arduino to controllers and connectors($2/ea in lots of 20 with shipping)](https://www.pcbway.com/project/shareproject/Trash_Robot_main__brain__board.html)
+ - [straight 0.1 inch headers from Digikey(buy about 2 per kit at about 60 cents each)](https://www.digikey.com/en/products/detail/chip-quik-inc/HDR100IMP40M-G-V-TH/5978197)
+ - [Ribbon cable from Digikey(about $8 for about 6 kits worth for about $2/kit rounding up )](https://www.digikey.com/en/products/detail/assmann-wsw-components/AWG28-20-F-1-300-R/2391636)
+ - [8 buttons for controller from Digikey(about $1 for all 8)](https://www.digikey.com/en/products/detail/te-connectivity-alcoswitch-switches/FSM2JRT/529664)
+ - [Cables from Digikey to connect stepper motors in DVD drive stages to circuit board(about $10 for 3 of them)](https://www.digikey.com/en/products/detail/molex/2177971043/14637940)
+ - [Arduino Uno from Sparkfun($25, some off brand UNOs have power supply problems for this application, test any new board to see if it stalls out)](https://www.sparkfun.com/products/11021)
+ - [9 pin socket headers](https://www.digikey.com/en/products/detail/samtec-inc/SSQ-109-03-T-S/1111949)
+
+![](https://pcbwayfile.s3-us-west-2.amazonaws.com/web/21/02/16/1105143577771.png)
+
+![](https://raw.githubusercontent.com/LafeLabs/geometronmagic/main/cube/uploadimages/kit.jpg)
+
+Assemble the kit into a "brain".  
+
+## Control Panel Geometry
+
+[![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/symbolfeed/controller.svg)](https://raw.githubusercontent.com/LafeLabs/hypercube/main/symbolfeed/controller.svg)
+
+![](https://raw.githubusercontent.com/LafeLabs/geometronmagic/main/cube/uploadimages/controller-outside.jpg)
+
+## Assembled Electronics Kit Photo
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/assembledkit.jpg)
+
+![](https://raw.githubusercontent.com/LafeLabs/geometronmagic/main/cube/uploadimages/brain-assembly.jpg)
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/bottomcutout,jpg)
+
+![](https://i.imgur.com/hz4C54Y.jpg)
+
+![](https://i.imgur.com/hz4C54Y.jpg)
+
+##  DVD drive cables
+
+[Cables from Digikey to connect stepper motors in DVD drive stages to circuit board(about $10 for 3 of them)](https://www.digikey.com/en/products/detail/molex/2177971043/14637940)
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/stagesraw.png)
+
+![](https://i.imgur.com/zvVKp6T.jpg)
+
+![](https://i.imgur.com/7KoLTuc.jpg)
+
+
+## Z axis Stage Assembly
+
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/zbase.jpg)
+
+## X and Y axis stage assemblies
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/xystages.jpg)
+
+
+## Cardboard assembly
+
+Assemble cardboard cubes by first getting large numbers of self-replicating 4 inch squares.  To make one cube we need a set of either 12 or 8 side pieces and either 2 or 3 bottom pieces and 5 plain squares.  
+
+### Side Panel Layout
+
+[![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/symbolfeed/side.svg)](https://raw.githubusercontent.com/LafeLabs/hypercube/main/symbolfeed/side.svg)
+
+Now cut out 3 of the bottom pieces, and stack them into a fifth glued panel. 
+
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/cardboardbottom.jpg)
+
+
+.svg file for laser cutter:
+
+[![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/symbolfeed/bottom.svg)](https://raw.githubusercontent.com/LafeLabs/hypercube/main/symbolfeed/bottom.svg)
+
+Assemble the sides into the base as shown:
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/cardboardcorner.jpg)
+
+Cut out 4 inch squares, print on them, glue them to the panels, and hold it all together with rubber bands:
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/touchgrass.jpg)
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/dandylion0.png)
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/road3cubes.jpg)
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/zoomcubebox.jpg)
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/zoomcube2.jpg)
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/zoomcube3.jpg)
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/zoomcube4.jpg)
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/cube-bottom-pattern.jpg)
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/cube-side-pattern.jpg)
+
+Every cube we produce in the Trash Robot Network is part of the Geometron Hypercube.  Therefore to grow the Hypercube, we produce and distribute as many cubes as we can, and always evolve the cubes to make them better over time and to solve specific problems to bring us closer to Trash Magic.
+
+
+## Action Geometry Tools: Rulers and Shapes
+
+To make geometric constructions out of cardboard trash, we use the tools of Action Geometry, which are created with the Geometron Language.  These include the ruler, which we cut from 0.2 or 0.25 inch thick neon green acrylic and the shape sets which we cut from 0.1 or 0.125 inch thick neon green acrylic.  
+
+### Geometron Ruler
+
+The Geometron Ruler is one inch by six inches. One side has tenths and the other halves, quarters and eights. The highest quality rulers are made from quarter inch neon green acrylic with a laser cutter.  Any ruler can be used to make more rulers.  Cereal box cardboard is a good material.  Find a maker space or individual with a laser cutter.  Dig through the waste bin to find extra acrylic.  Place the outlines and etch and make rulers.  Give them away and spread the word of Geometron, Trash Magic, Trash Robot and so on.  Also you can use [Ponoko.com](https://www.ponoko.com/) to get large numbers of rulers made and can sell those if you so choose.  
+
+Using Ponoko.com is only cost effective if you have a budget of over 1000 dollars, then the cost per ruler can drop to about a dollar and a half.  Also, Ponoko only has eighth inch acrylic and quarter inch is the nicest.  For best results, go find 0.2 inch or quarter inch neon green acrylic somewhere, find a laser cutter and print these out yourself.  All the files for this are below.  
+
+This is some 6 inch rulers from both green and yellow acrylic and a 15 cm metric ruler.
+
+![](https://raw.githubusercontent.com/LafeLabs/geometronmagic/main/cube/uploadimages/rulers-photo.jpg)
+
+Ruler Outline SVG file:
+
+[![](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruleroutline.svg)](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruleroutline.svg)
+
+Ruler Etch pattern PNG file:  
+
+[![](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruleretch.png)](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruleretch.png)
+
+Ruler 2 color SVG file for Ponoko.com:
+
+[![](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruler2color.svg)](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruler2color.svg)
+
+
+Set of 8 rulers in one SVG file for Ponoko.com:
+
+[![](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/rulers8.svg)](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/rulers8.svg)
+
+Centimeters PNG file for etch.  Print out with 15 centimeter width and 2 cm height:
+
+[![](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruler-cm-etch.png)](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruler-cm-etch.png)
+
+centimeters Ruler Outline SVG file, line up with etch and make 15x2 cm:
+
+[![](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruler-cm-outline.svg)](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruler-cm-outline.svg)
+
+One ruler with etch and cut in different layers:
+
+[![](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruler-cm.svg)](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruler-cm.svg)
+
+Set of 8 cm rulers in one SVG file for Ponoko.com:
+
+[![](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruler-cm-array.svg)](https://raw.githubusercontent.com/LafeLabs/pibrary/main/factory/rulerimageset/uploadimages/ruler-cm-array.svg)
+
+## Shapes
+
+These shapes are used for constructions based on fundamental symmetries: fourfold, eightfold, threefold, fivefold, and sixfold.  For best results, we cut them out from eight inch neon green acrylic with a laser cutter.
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/shapes.jpg)
+
+![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/uploadimages/shapes2.jpg)
+ 
+.svg file for use in laser cutter.  Each shape has side of 3 inches, so this is a 6 inch wide file:
+
+[![](https://raw.githubusercontent.com/LafeLabs/hypercube/main/symbolfeed/shapes.svg)](https://raw.githubusercontent.com/LafeLabs/hypercube/main/symbolfeed/shapes.svg)
+
+These can all also be constructed using the tools of classical geometry(compass and ruler) or a ruler and a protractor.  So they can be made by hand and cut out from cardboard or paper trash if no laser or acrylic is available.
+
+
+
+
 
 
