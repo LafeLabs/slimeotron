@@ -42,6 +42,64 @@ div {
 
 ```
 
+### Processing For Optical neuron Out 0
+
+This takes the integrated power spectral density(maybe, need to check units) of the incoming audio signal over some band and turns that into a grey scale pixel intensity on a rectangle.  You need to install the library for processing.sound.
+
+```
+import processing.sound.*;
+
+FFT fft;
+AudioIn in;
+int bands = 512;
+float[] spectrum = new float[bands];
+float minFreq = 500;
+float maxFreq = 1500;
+float scale = 1.0; // adjust this to change the gain
+
+void setup() {
+  size(800, 600);
+  background(255);
+  
+  // Create an Input stream which is routed into the Amplitude analyzer
+  fft = new FFT(this, bands);
+  in = new AudioIn(this, 0);
+  
+  // start the Audio Input
+  in.start();
+  
+  // patch the AudioIn
+  fft.input(in);
+  
+  // set up the graph
+  stroke(0);
+  strokeWeight(2);
+  fill(255);
+  rect(0, 0, width, height);
+}
+
+void draw() {
+  background(255);
+  fft.analyze(spectrum);
+  
+  // calculate the total integrated power between minFreq and maxFreq
+  float totalPower = 0;
+  int minIndex = Math.round(minFreq / (44100.0f / bands));
+  int maxIndex = Math.round(maxFreq / (44100.0f / bands));
+  for(int i = minIndex; i < maxIndex; i++) {
+    totalPower += spectrum[i];
+  }
+  
+  // plot the integrated power as a line on a log scale
+  println(1000*totalPower);
+  background(255); // set background to white
+  noStroke(); // disable stroke for the rectangle
+  fill(100*totalPower*255); // set fill color to grayscale #808080
+  rect(0, 0, width, height); // draw the rectangle
+  
+}
+```
+
 ### Optical Neuron Arduino Code:
 
 
@@ -406,8 +464,20 @@ void geometronSequence(String glyph){
 }
 ```
 
-Use this processing code to get an FFT of the audio signal:
+Install [Processing](https://processing.org) to convert audio signals into pixels to the optical neuron.
 
+## Processing to do:
+
+ - figure out how to record data sets both time and frequency domain for export to other visualization software
+ - figure out how to load and visualize recorded data sets in processing
+ - figure out how to create 3d visualization of data sets which python can transform into blender files for the artists to work with
+ - get a simple neuron link working with a specific FFT component controlling the output level of a big square of pixels on the screen which go from black to white in greyscale
+ - get processing to work on the ubuntu machine 
+ - and raspberry pi
+ - and android
+
+
+Use this processing code to get an FFT of the audio signal:
 
 ```
 import processing.sound.*;
