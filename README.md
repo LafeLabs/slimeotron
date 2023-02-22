@@ -8,41 +8,11 @@ This project uses one [Arduino Uno](https://en.wikipedia.org/wiki/Arduino_Uno), 
 
 ### [slimeotron part 2 on tiktok](https://www.tiktok.com/@trash_robot/video/7202754417244818731)
 
-### HTML test pixel for input to Optical Neuron:
 
-```
-<!DOCTYPE html>
-<html>
-<head>
-<style> 
-div {
-  width: 700px;
-  height: 700px;
-  background-color: white;
-  animation-name: example;
-  animation-duration: 2s;
-  animation-iteration-count: 1000; 
-}
-
-@keyframes example {
-  from {background-color: white;}
-  to {background-color: black;}
-}
-</style>
-</head>
-<body>
-
-<h1>CSS Animation</h1>
-
-<div></div>
-
-
-</body>
-</html>
-
-```
 
 ### Processing For Optical neuron Out 0
+
+Audio signals can be turned into pixels which are picked up by the 
 
 This takes the integrated power spectral density(maybe, need to check units) of the incoming audio signal over some band and turns that into a grey scale pixel intensity on a rectangle.  You need to install the library for processing.sound.
 
@@ -129,6 +99,8 @@ void loop() {
 
 }
 ```
+
+
 
 
 ### Geometron Hypercube Trajectory:
@@ -477,6 +449,7 @@ Install [Processing](https://processing.org) to convert audio signals into pixel
  - and android
 
 
+
 Use this processing code to get an FFT of the audio signal:
 
 ```
@@ -515,6 +488,40 @@ void draw() {
 
 ```
 
+
+### HTML test pixel for input to Optical Neuron:
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 700px;
+  height: 700px;
+  background-color: white;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: 1000; 
+}
+
+@keyframes example {
+  from {background-color: white;}
+  to {background-color: black;}
+}
+</style>
+</head>
+<body>
+
+<h1>CSS Animation</h1>
+
+<div></div>
+
+
+</body>
+</html>
+
+```
 
 ### Electronics Kit Parts
 
