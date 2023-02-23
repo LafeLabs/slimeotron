@@ -20,5 +20,5 @@ void loop() {
     digitalWrite(outpin,HIGH);
   }
   Serial.println(x0);
-  delay(1);
+//  delay(1);
 }
