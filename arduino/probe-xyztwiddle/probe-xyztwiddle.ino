@@ -15,11 +15,11 @@ int unit = 30;//53 steps = 1 mm, 1 step = 18.9 microns, unit of 106 is 2 mm, 212
 
 int side = unit;
 int x0 = 0;
-int x1 = 400;
+int x1 = 130;
 int x = 0;
 int y = 0;
 int z = 0;
-float gain = 0.08;
+float gain = 0.24;
 int stepIndex = 0;
 int t = 0;
 
@@ -134,35 +134,37 @@ void loop() {
   }
   
   if(stepIndex == 0){
-    moveUp(side);    
-  }
-  if(stepIndex == 1){
-    moveDown(side);    
-  }
-  if(stepIndex == 2){
-    moveLeft(side);    
-  }
-  if(stepIndex == 3){
-    moveRight(side);    
-  }
-  if(stepIndex == 4){
     moveAway(side);    
   }
-  if(stepIndex == 5){
+  if(stepIndex == 1){
+    moveRight(side);    
+  }
+  if(stepIndex == 2){
+    moveUp(side);    
+  }
+  if(stepIndex == 3){
     moveTowards(side);    
   }
+  if(stepIndex == 4){
+     moveLeft(side);    
 
+  }
+  if(stepIndex == 5){
+    moveDown(side);    
+  }
 
     t = millis();
-
 
     doc["t"] = t;
     doc["index"] = stepIndex;
     doc["x"] = x;
     doc["y"] = y;
     doc["z"] = z;
-    serializeJson(doc, Serial);
-    Serial.println();
+    //Serial.println(side);
+    if(side != 0){
+      serializeJson(doc, Serial);//this slows everything way down
+      Serial.println();  
+    }
   //  serializeJsonPretty(doc, Serial);        
 
  /*
