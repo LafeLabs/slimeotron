@@ -1,5 +1,7 @@
 # [Slimeotron](https://github.com/lafelabs/slimeotron)
 
+### [webeditor.html](webeditor.html)
+
 ### An artificial neuron based on the [slimezistor](https://github.com/lafelabs/slimezistor) and the [trash robot](https://www.trashrobot.org) geometron printer.
 
 This project uses one [Arduino Uno](https://en.wikipedia.org/wiki/Arduino_Uno), two [Adafruit Circuit Playground Express](https://learn.adafruit.com/adafruit-circuit-playground-express) boards, a [custom pcb from pcbway](https://www.pcbway.com/project/shareproject/Trash_Robot_main__brain__board.html), 3 [stepper motor boards from pololu robotics](https://www.pololu.com/product/2966), 3 cardboard cubes, and various electronics and art supplies. 
