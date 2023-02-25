@@ -1,7 +1,7 @@
 int outpin = 6;
 int x0 = 0;//value of analog pin A0
-int vmin = 250;//upper voltage trigger to toggle digital LOW
-int vmax = 750;//lower voltage trigger to toggle digital HIGH
+int vmin = 500;//upper voltage trigger to toggle digital LOW
+int vmax = 600;//lower voltage trigger to toggle digital HIGH
 
 void setup() {
 
