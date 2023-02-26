@@ -7,7 +7,7 @@
 
 char Glyph[] = "H";
 
-int delayus = 5000;//delayMicroseconds(delayus); for each step, 2 ms for 1 step is about 2 ms for 20 microns or 10 microns per ms
+int delayus = 10000;//delayMicroseconds(delayus); for each step, 2 ms for 1 step is about 2 ms for 20 microns or 10 microns per ms
 
 int unit = 30;//53 steps = 1 mm, 1 step = 18.9 microns, unit of 106 is 2 mm, 212 is 4 mm, 
 
