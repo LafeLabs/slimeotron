@@ -10,7 +10,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   x0 = analogRead(A8);
-  x0 *= 1.5;
+  x0 *= 8.5 ;
   //x0 -= 16;
   if(x0<0){
     x0 = 0;
